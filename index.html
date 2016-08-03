@@ -34,8 +34,27 @@ The program composed by:</p>
 
 <script src="https://gist.github.com/CharlieHdzMx/a000cb3b18e05d7bb4c47e145c5d8867.js"></script>
 <p>
-  ASD
+  So the first step was to download the DNA patient files. Using the <a href="http://doc.qt.io/qt-5/qnetworkaccessmanager.html">
+    QNetworkAccessManager</a> as a object in a class called DownloadManager that inherits from QObject. We set a list of
+    QNetworkReply to determine whenever there is not more download files to download and stop the application; and we used another
+    list to contain the names of the DNA files to futher analysis.
 </p>
+<script src="https://gist.github.com/CharlieHdzMx/895d322c0e41970cd8c6e2b593a434b2.js"></script>
+<p>
+  So, in the main loop, we are going to put a DownloadManager object. The constructor of DownloadManager trigger a connection 
+  between a QNetworkAccessManager and the DownloadManager slot downloadFinished(). This function perform the analysis of DNA patient
+  in the last setted DNA file<i>Note: If you aren't familiarized with this behaviour
+  of Sinals and Slots in Qt, we recommend read <a href="http://doc.qt.io/qt-4.8/signalsandslots.html">this tutorial</a></i>
+</p>
+
+<p>
+  Before annoucing the downloadFinished() method. We are going to talk about the implementation of execute that is the trigger
+  to begin the download of DNA files. It achieve a bifurcation when the command is without parameters. The other way call
+  the QNetworkAccessManager hosting of the download request from the url's
+</p>
+
+<script src="https://gist.github.com/CharlieHdzMx/04f64ac0e45e3f703181f1a221196cda.js"></script>
+
 </div>
 
       <footer class="site-footer">
