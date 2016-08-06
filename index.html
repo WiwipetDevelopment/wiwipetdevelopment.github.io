@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
+  
   <body>
     <section class="page-header">
       <h1 class="project-name">QWiwiped.</h1>
@@ -16,7 +17,77 @@
     </section>
 
     <section class="main-content">
-      <h3>
+      <a id="operator-overloading-pages" class="anchor" href="#operator-overloading-pages" 
+      aria-hidden="true"><span aria-hidden="true" 
+      class="octicon octicon-link"></span></a>
+      C++ Operator Overloading</h3>
+    <h4>By Carlos Enrique Hernandez Ibarra 05 August 2016 Guadalajara Jalisco.</h4>
+      
+    <div align=justify> 
+<p>Develop a Fraction class with the methods for calculating addition,substration,multiplication and division.
+Also add overloaded operators for the same arithmetic operations and various kinds of comparison In each case the parameter
+should be a const Fraction&. Write client code to test your new operators.</p>
+
+<p>
+  To be useful, a Fraction object should be able to interact with other kinds
+of numbers. Expand the definition of Fraction so that the operators in your
+solution to Problem 1 also work for int and double. It should be clear, for
+example, how to get frac + num to be correctly evaluated. How would you
+handle the expression num + frac, where frac is a fraction and num is an int?
+Write client code to test your new functions.
+</p>
+
+<p>
+  Add arithmetic and comparison operators to the class Complex. Write client
+code to test your expanded class. //I didn't complete this part, Would you like to colaborate?
+</p>
+
+<p>
+  We focused to the methods relevant of the theme (Overloading Operators) So the principal functions declaration are below:
+</p>
+
+<script src="https://gist.github.com/CharlieHdzMx/6518847cdf9ce2da17c1995d82aca89a.js"></script>
+
+<p>
+  There are 2 differents functions: 1) Binary non member functions (functions with the "friend" keyword= 
+  2) Binary member function using a instance to perform algorithms with non Fraction parameters.
+  The implementation of these functions differ each other as show in the next code:
+</p>
+
+<script src="https://gist.github.com/CharlieHdzMx/ad15190715604f52b9840eca56c75156.js"></script>
+
+<p>
+  A few functions were used to achieve better code, called 2 simplify() functions, a set() function, 3 overloaded
+  function and member access function (for encapsulation purpose):
+</p>
+
+<script src="https://gist.github.com/CharlieHdzMx/7d85fcb0c66d30e55d6ea76867bc6d98.js"></script>
+
+<p>
+  Finally there are some quick tips about this theme from our friends Alan Ezust and Paul Ezust:
+</p>
+
+<ol>
+<li>The keyword operator is used in C++ to define a new meaning for an operator symbol,such as +, -, =, *, and &.</li>
+
+<li>Overloaded operators provide a more compact syntax for calling functions, leading to more readable code (assuming 
+the operators are used in ways that are commonly understood).</li>
+
+<li>it is possible to overload operators as member functions, or as global functions. The primary difference that you notice first 
+is how they can be called. In particular, a member function operator requires an object as the left operand. A global 
+function, in contrast,permits the same kinds of type conversions for either operand.</li>
+
+<li>Here is a way to remember which operators can be overloaded.
+If the symbol has a dot (.) in it anywhere, overloading is probably not allowed.</li>
+
+<li>Overloading the comma operator is permitted but not recommended until you are a C++ expert.</li>
+
+<li>It is possible to define a new meaning for a built-in operator symbol so that it can be used with operands 
+of different types. But it is not possible to change the associativity or the precedence of a built-in operator symbol.</li>
+</ol>
+
+</div>
+
 <a id="dna-analysis-pages" class="anchor" href="#dna-analysis-pages" aria-hidden="true"><span aria-hidden="true" 
 class="octicon octicon-link"></span></a>Qt DNA Analysis App.</h3>
 
