@@ -27,36 +27,50 @@
       
       <div align=justify>
       <p>
-        [Sp] Siguiendo el ejercicio de <i> A introduccion to design in C++  with Qt patterns </i> de los hermanos Ezust
-        se realiza un recordatorio de cumpleaños. Este recordatorio soporta comandos desde la terminal de comandos.
+        <br>
+        [Sp] Hay un  ejercicio de <i> A introduccion to design in C++  with Qt patterns </i> de los hermanos Ezust
+        donde se realiza un recordatorio de cumpleaños. El principal aprendizaje de este ejercicio es el como soportar 
+        los comandos de una terminal linux.
+        <br>
       </p> 
       
       <p>
-        Como instrucciones, el programa debe de realizar los siguientes puntos:
+        <br>
+        Las instrucciones del recordatorio son:
+        <br>
       </p>
       
       <ol>
-        <li>Almacenamiento pares de nombre y fecha de cumpleaños en un archivo de texto; de la manera que gustes.</li>
+        <li>Almacenamiento de pares <nombre y fecha> de cumpleaños en un archivo de texto; de la manera que gustes.</li>
         <li>Comando sin argumentos, abrira el archivo y enlistara los 30 cumpleaños que sucederan mas temprano.</li>
         <li>Comando con <it>-a "John Smith" "yyyy-mm-dd"</it> debe de agregar el nombre y fecha en el archivo.</li>
         <li>Comando con <it>nameSpec</it> buscan en el archivo  por la fecha de cumpleaños de <it>namSpec</it></li>
       </ol>
       
       <p>
-      Se usa un QMap(m_subjets) para almacenar los pares de cumpleaños. La razon de usar un QMap es que organiza automaticamente
-      sus elementos por el valor de <i>key</i>, lo que evitara realizar el algoritmo de acomodo.
+      <br>
+      Para almacenar los pares usaremos un QMap (similar al Map de STL- si tienes dudas acerca de como funciona el Map,
+      puedes seguir este <a href=http://www.cplusplus.com/reference/map/map/>link</a> . La razon de usar un QMap es que organiza
+      sus elementos en funcion al cumpleaños de cada persona (del mas joven al mas viejo). Eso nos evita el algoritmo de acomodo
+      de elementos.
+      <br>
       </p>
       
       <p>
-        Para almacenar los datos del QFile en QMap, creamos un QTextStream como intermediario y con ayuda de funciones QString y
-        QStringList insertamos los elementos con su adecuado formato:
+      <br>
+        Para almacenar los datos del QFile en QMap, creamos un QTextStream como intermediario  de escritura y lectura
+        (<b>Serializer Pattern</b>) y con ayuda de funciones QString y QStringList insertamos los elementos con su adecuado formato:
+      <br>
       </p>
       
       <script src="https://gist.github.com/CharlieHdzMx/cf95b25f5ec8b01c7d4840d72032e8f9.js"></script>
       
       <p>
+      
         Se usa la funcion takeFirst() para obtener los strings de los argumentos de la terminal.Por ejemplo, la muestra de como 
         manejar el comando vacio -n:
+        
+        
       </p>
       
       <script src="https://gist.github.com/CharlieHdzMx/cfabfbaf98023831f8fd1d3096baaa6f.js"></script>
